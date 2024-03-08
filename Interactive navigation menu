@@ -1,0 +1,59 @@
+Here's an interactive navigation menu that changes color on scroll and hover using HTML, CSS, and JavaScript:
+HTML:
+<nav class="navigation">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+CSS:
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.navigation ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation li {
+  padding: 10px 20px;
+}
+
+.navigation a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navigation a:hover {
+  background-color: #555;
+  color: #f1f1f1;
+}
+
+.navigation.scrolled {
+  background-color: #222;
+}
+
+JavaScript:
+window.addEventListener('scroll', function() {
+  const navigation = document.querySelector('.navigation');
+  if (window.scrollY > 0) {
+    navigation.classList.add('scrolled');
+  } else {
+    navigation.classList.remove('scrolled');
+  }
+});
+
+This code creates a navigation bar with a fixed position that remains at the top of the page as you scroll. The ul element displays the menu items horizontally, and the li elements style each menu item. The a elements style the text and handle the hover effect.
+The JavaScript code adds a scrolled class to the navigation element when the user scrolls down. This class changes the background color of the navigation bar, creating a subtle visual cue to the user.
